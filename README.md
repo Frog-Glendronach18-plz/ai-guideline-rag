@@ -2,7 +2,7 @@
 
 総務省・経済産業省「AI事業者ガイドライン」（第1.1版・第1.2版）に、版とページ番号の出典付きで答えるRAGデモ。LangChain の学習用。
 
-計画は [docs/roadmap.md](docs/roadmap.md) を参照。
+> **開発中**（2026年10月 公開予定）。計画と進捗は [docs/roadmap.md](docs/roadmap.md)、評価用の質問は [data/eval/questions.json](data/eval/questions.json) を参照。
 
 ## セットアップ
 
