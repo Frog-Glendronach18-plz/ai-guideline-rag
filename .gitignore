@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Secrets
+.env
+
+# 題材PDF（公開元からダウンロードする。README参照）
+data/pdf/*.pdf
+
+# Tools
+.ruff_cache/
+.pytest_cache/
+.ipynb_checkpoints/
