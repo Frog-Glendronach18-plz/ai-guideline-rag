@@ -19,7 +19,7 @@
 | ① 読み込み | `loader.py`：PDF → ページ単位の Document（NFKC正規化、版・ページ） | `try_load.py` | 済 |
 | ② 分割 | `splitter.py`：Document → チャンク（日本語の区切り文字、短い見出しは次のチャンクに結合） | `try_split.py` | 済 |
 | ③ 索引 | `embeddings.py`・`index.py`：埋め込み（Workers AI bge-m3）、索引の作成・保存・読み込み（`data/index.json`） | `build_index.py` | 済 |
-| ④⑤ 検索 | `retriever.py`：版で絞り込んだ検索、検索結果のコンテキスト整形 | `try_search.py` | |
+| ④⑤ 検索 | `retriever.py`：版で絞り込んだ検索（上位5件）、検索結果のコンテキスト整形 | `try_search.py` | 済 |
 | ⑥ 回答 | `answer.py`：プロンプト＋構造化出力で回答 | `ask.py` | |
 | 差分 | `router.py`・`diff.py`：質問の種類の判定、版の差分の回答 | | |
 | 評価 | | `eval.py`：評価用の質問で正答率と出典を集計 | |

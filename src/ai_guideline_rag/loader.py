@@ -23,13 +23,19 @@ _LEADING_PAGE_NUMBER = re.compile(r"\A\s*\d+\s*\n")
 # PDFのレイアウトによる折り返し：句点などで終わっていない行の後ろに、和文が続く改行
 _WRAPPED_LINE = re.compile(r"(?<=[^\s。:])\n(?=[぀-ヿ一-鿿、。「」()ー])")
 
+# 私用領域の文字（U+E000〜U+F8FF）。PDFのフォント固有の箇条書き記号がこの範囲で残る
+# （U+F0B2・U+F0D8・U+F06C・U+F09F）。NFKC では変わらないので「・」に置き換える
+_PRIVATE_USE = re.compile(r"[-]")
+
 
 def normalize_text(text: str) -> str:
-    """NFKC 正規化し、行末の空白・連続する空行・和文の途中の折り返しを整理する。"""
+    """NFKC 正規化し、行末の空白・連続する空行・和文の途中の折り返し・箇条書き記号を整理する。"""
     text = unicodedata.normalize("NFKC", text)
     lines = [line.rstrip() for line in text.splitlines()]
     text = re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
-    return _WRAPPED_LINE.sub("", text)
+    text = _WRAPPED_LINE.sub("", text)
+    # 「・」はカタカナの範囲にあるため、折り返しの結合より後で置き換える（先にすると改行が消える）
+    return _PRIVATE_USE.sub("・", text)
 
 
 def printed_page(pdf_index: int) -> int:

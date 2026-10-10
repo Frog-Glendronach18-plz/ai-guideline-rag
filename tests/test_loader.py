@@ -22,6 +22,13 @@ def test_join_wrapped_japanese_lines():
     assert normalize_text("各主\n体が取り組む") == "各主体が取り組む"
 
 
+def test_private_use_bullet_becomes_middle_dot():
+    # 通る例   : "全般\n・ ログを記録する"        … 記号が「・」になり、箇条書きの改行も残る
+    # はじく例 : "全般\n ログを記録する"   … フォント固有の記号が残る
+    #            "全般・ ログを記録する"          … 置き換えを結合より先にすると改行が消える
+    assert normalize_text("全般\n ログを記録する") == "全般\n・ ログを記録する"
+
+
 def test_keep_line_break_after_sentence_and_before_bullet():
     # 通る例   : "記載する。\n次の文"、"全般\n➢ 学習及び評価の手法"   … 文末・箇条書きの改行は残る
     # はじく例 : "記載する。次の文"、"全般➢ 学習及び評価の手法"     … つなげすぎて構造が消える
