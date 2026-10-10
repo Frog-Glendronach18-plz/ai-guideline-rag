@@ -19,3 +19,6 @@ data/pdf/*.pdf
 .ruff_cache/
 .pytest_cache/
 .ipynb_checkpoints/
+
+# Claude Code のローカル設定（プレビュー起動など）
+.claude/

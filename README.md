@@ -23,7 +23,7 @@
 | ⑥ 回答 | `answer.py`：プロンプト＋構造化出力で回答（回答・出典・回答可否）、渡していない出典の検出 | `ask.py` | 済 |
 | 差分 | `router.py`・`diff.py`：質問の種類の判定、版の差分の回答 | | |
 | 評価 | | `eval.py`：評価用の質問で正答率と出典を集計 | |
-| 画面 | `app.py`（リポジトリ直下）：Gradio | | |
+| 画面 | `app.py`（リポジトリ直下）：Gradio。同時処理2件・1日100回・質問300文字までの制限、利用統計の送信なし | `python -m uv run python app.py` | 済 |
 
 `scripts/hello_lang.py` は LangChain の練習用（チャットモデル、プロンプトテンプレート、構造化出力）。
 
@@ -49,6 +49,18 @@ uv run python scripts/check_env.py
 
 出典：総務省・経済産業省「AI事業者ガイドライン」
 https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html
+
+## デプロイ（Render）
+
+GitHub の `main` へ push すると自動でデプロイされる。`uv.lock` があるため Render が uv を用意し、Python は `.python-version`（3.12）を使う。
+
+| 項目 | 設定値 |
+| --- | --- |
+| Build Command | `uv sync --frozen --no-dev` |
+| Start Command | `uv run --no-sync python app.py` |
+| Environment Variables | `ANTHROPIC_API_KEY`、`CF_ACCOUNT_ID`、`CF_AI_API_TOKEN`（任意：`DAILY_LIMIT`） |
+
+索引（`data/index.json`）はリポジトリに含めているので、デプロイ時に埋め込みを作り直さない。PDF は不要。
 
 ## 開発コマンド
 
