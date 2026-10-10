@@ -37,6 +37,7 @@ JST = timezone(timedelta(hours=9))
 SOURCE_URL = (
     "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html"
 )
+GITHUB_URL = "https://github.com/Frog-Glendronach18-plz/ai-guideline-rag"
 
 VERSION_CHOICES = {"第1.2版（最新）": "1.2", "第1.1版": "1.1"}
 
@@ -114,6 +115,7 @@ with gr.Blocks(title="AI事業者ガイドライン Q&A", analytics_enabled=Fals
         "版とページの出典付きで答えます。\n\n"
         f"※ 個人が学習目的で作成した**非公式**のデモです。回答は誤りを含む可能性があるため、"
         f"必ず[公式の原文]({SOURCE_URL})で確認してください。"
+        f"　ソースコード・設計・評価：[GitHub]({GITHUB_URL})"
     )
     with gr.Row():
         question = gr.Textbox(

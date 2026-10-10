@@ -2,7 +2,15 @@
 
 総務省・経済産業省「AI事業者ガイドライン」（第1.1版・第1.2版）に、版とページ番号の出典付きで答えるRAGデモ。LangChain の学習用。
 
-> **開発中**（2026年10月 公開予定）。計画と進捗は [docs/roadmap.md](docs/roadmap.md)、評価用の質問は [data/eval/questions.json](data/eval/questions.json) を参照。
+## デモ
+
+**[https://ai-guideline-rag.onrender.com/](https://ai-guideline-rag.onrender.com/)**
+
+- 質問すると、回答と出典（版・ページ）を返します。対象の版（第1.2版／第1.1版）を選べます
+- 無料プランのため、しばらくアクセスがないと最初の表示に1分ほどかかります
+- 個人が学習目的で作成した非公式のデモです。回答は必ず公式の原文で確認してください
+
+> **開発中**（版の差分への回答・評価を追加予定）。計画と進捗は [docs/roadmap.md](docs/roadmap.md)、評価用の質問は [data/eval/questions.json](data/eval/questions.json) を参照。
 
 ## 構成
 
