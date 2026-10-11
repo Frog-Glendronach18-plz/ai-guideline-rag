@@ -1,0 +1,1149 @@
+{
+  "config": {
+    "llm": "claude-haiku-5-5",
+    "embedding": "@cf/baai/bge-m3",
+    "chunk_size": 600,
+    "chunk_overlap": 100,
+    "k": 5,
+    "questions": 25
+  },
+  "records": [
+    {
+      "id": "S1",
+      "type": "single",
+      "question": "広島AIプロセスの国際行動規範の「報告枠組み」に回答を提出・公表した組織はいくつありますか。そのうち日本企業は何社ですか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "広島AIプロセス 国際指針 報告枠組み 回答 提出 公表 組織 日本企業",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            7,
+            36
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          7
+        ],
+        [
+          "1.2",
+          36
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "2026年3月現在、25組織が回答を提出し、OECDのウェブサイト上で公表されています。そのうち日本企業は9社です。",
+      "expected_answer": "2026年3月現在、日本企業9社を含む25組織が回答を提出し、OECDのウェブサイトで公表されている。報告枠組みは2025年2月から運用されている。",
+      "tokens": {
+        "input": 3931,
+        "output": 273
+      },
+      "cost_usd": 0.0005296000000000001,
+      "seconds": 4.78
+    },
+    {
+      "id": "S2",
+      "type": "single",
+      "question": "RAG（検索拡張生成）を使えばハルシネーションを抑えられるので、どんな業務でもRAGを使うのが望ましいですか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "RAG 検索拡張生成 ハルシネーション 抑制 業務への適用 留意点",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            15,
+            16
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          15
+        ],
+        [
+          "1.2",
+          16
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "参照テキストからは、RAG（検索拡張生成）をどんな業務でも使うのが望ましいとは分かりません。RAGはハルシネーションの抑制や出力過程・根拠の透明性向上等が期待される一方で、RAGを活用すると生成AIの回答の収束が加速する可能性が高いため、コンテンツの多様性・独創性を必要とする業務では、RAGの活用が適切ではない場合もあることに留意が必要とされています。",
+      "expected_answer": "RAGはハルシネーションの抑制や根拠の透明性向上が期待される一方、生成AIの回答の収束が加速する可能性が高い。そのため、コンテンツの多様性・独創性が必要な業務ではRAGの活用が適切でない場合もあると注意している。",
+      "tokens": {
+        "input": 4170,
+        "output": 380
+      },
+      "cost_usd": 0.000607,
+      "seconds": 2.85
+    },
+    {
+      "id": "S3",
+      "type": "single",
+      "question": "ガイドラインの「透明性」に従うと、AIシステムのアルゴリズムやソースコードを公開しなければなりませんか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "透明性 アルゴリズム ソースコード 公開 説明責任 情報提供",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            20
+          ],
+          "rank": 3
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          20
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "いいえ、公開しなければならないわけではありません。ガイドラインでは、関係するステークホルダーへの情報提供は、アルゴリズムやソースコードの開示を必ずしも想定しておらず、プライバシー及び営業秘密を尊重し、社会的合理性が認められる範囲で実施するとされています。ただし、説明可能性・解釈可能性の向上やアカウンタビリティの要請は満たす必要があります。",
+      "expected_answer": "必ずしも想定していない。ステークホルダーへの情報提供は、プライバシーと営業秘密を尊重し、技術の特性や用途に照らして社会的合理性が認められる範囲で行う。ただし説明可能性・解釈可能性の向上やアカウンタビリティの要請は満たす必要がある。",
+      "tokens": {
+        "input": 4249,
+        "output": 351
+      },
+      "cost_usd": 0.0006004000000000001,
+      "seconds": 2.69
+    },
+    {
+      "id": "D1",
+      "type": "diff",
+      "question": "第1.2版では「AIエージェント」はどのように扱われるようになりましたか。第1.1版との違いと、ここでいう「自律」がどの程度のものを指すかも教えてください。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "diff",
+        "version": null,
+        "search_query": "AIエージェント 定義 自律性 追加",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            10,
+            11
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          11
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "第1.2版では、AIエージェントよりも包括的かつ進化的な概念としてエージェンティックAIが新たに位置づけられ、AIエージェントは複数で自律的に意思決定しアクションを起こす目標主導型のAIシステムとして説明されています。また「自律」は高度な自律状態だけでなく、ある程度の自律性を持つものも含むとされています。第1.1版の参照テキストには、AIエージェントやエージェンティックAI、自律性に関する記載は見つからず、第1.1版は「AI」の定義の中で機械学習をするソフトウェア等を含むことを示すにとどまります。\nAIエージェント・エージェンティックAIの位置づけ（新設） 検索した範囲では記載が見つからない エージェンティックAIはAIエージェントよりも包括的かつ進化的な概念とされ、複数のAIエージェントにより自律的に意思決定を下しアクションを起こす目標主導型のAIシステムと説明されている。 第1.2版では用語注釈としてAIエージェントとエージェンティックAIの関係が示され、後者がより包括的な概念として整理された。\n「自律」の程度（新設） 検索した範囲では記載が見つからない 自律については、高度な自律状態だけを指しているのではなく、ある程度の自律性を持つものも含むとされている。 第1.2版では「自律」を高度な自律状態に限定せず、ある程度の自律性を持つものも含めて捉えている。",
+      "expected_answer": "第1.1版には定義がなく、第1.2版で用語として新設された。AIエージェントは「特定の目標を達成するために、環境を感知し自律的に行動するAIシステム」と定義され、ISO/IEC 22989:2022の定義も参考に示されている。「自律」は高度な自律状態だけでなく、ある程度の自律性を持つものも含む。より包括的な概念としてエージェンティックAI（複数のAIエージェントで自律的に意思決定する目標主導型のAIシステム）にも触れている。同時にフィジカルAI、学習、推論の定義も追加された。",
+      "tokens": {
+        "input": 6154,
+        "output": 773
+      },
+      "cost_usd": 0.0010019,
+      "seconds": 4.55
+    },
+    {
+      "id": "D2",
+      "type": "diff",
+      "question": "第2部「D.」の章は、第1.1版から第1.2版でどう変わりましたか。対象となる事業者の範囲に注目して説明してください。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "diff",
+        "version": null,
+        "search_query": "高度な AI システムに関係する事業者に共通の指針 広島 AI プロセス 全ての AI 関係者向けの広島プロセス国際指針",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.1",
+          "pages": [
+            25
+          ],
+          "rank": 1
+        },
+        {
+          "version": "1.2",
+          "pages": [
+            26,
+            27,
+            32
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.1",
+          25
+        ],
+        [
+          "1.1",
+          33
+        ],
+        [
+          "1.1",
+          37
+        ],
+        [
+          "1.2",
+          26
+        ],
+        [
+          "1.2",
+          32
+        ],
+        [
+          "1.2",
+          39
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "第1.1版の第2部「D.」は「高度な AI システムに関係する事業者に共通の指針」で、高度な AI システムに関係する事業者を対象に、I)〜XI)（開発者向けの内容を含む）などを遵守すべきとしていました。第1.2版では「D.」は「広島 AI プロセス「全ての AI 関係者向けの広島プロセス国際指針」」に改められ、全ての AI システムに関係する事業者を対象に、同指針に即した行動をすべきとしています。対象範囲は「高度な AI システムに関係する事業者」から「全ての AI システムに関係する事業者」へ広がりました。\n第2部D.の章題と対象事業者（変更） 「高度な AI システムに関係する事業者に共通の指針」。高度な AI システムに関係する事業者は、「全ての AI 関係者向けの広島プロセス国際指針」及びその基礎となる「高度な AI システムを開発する組織向けの広島プロセス国際指針」を踏まえ、「共通の指針」に加え、I)〜XI)などを遵守すべきである。 「広島 AI プロセス「全ての AI 関係者向けの広島プロセス国際指針」」。全ての AI システムに関係する事業者は、広島 AI プロセスの「全ての AI 関係者向けの広島プロセス国際指針」に即した行動をすべきである。 対象が「高度な AI システムに関係する事業者」から「全ての AI システムに関係する事業者」へ広がり、章の位置づけも高度な AI 向けの共通指針から全 AI 関係者向けの指針に変わりました。\n高度な AI システムを開発する組織向け文書の扱い（変更） 高度な AI システムを開発する AI 開発者は、「高度な AI システムを開発する組織向けの広島プロセス国際行動規範」を遵守すべきであり、第2部D.との比較で追加的な記載事項が示されている。 高度な AI システムを開発する AI 開発者については、「高度な AI システムを開発する組織向けの広島プロセス国際行動規範」を参照することが望ましいとされている。 行動規範は、第1.1版では遵守すべきもの、第1.2版では参照することが望ましいものとされ、拘束の度合いが弱められています。対象は引き続き高度な AI システムの開発者です。\nAI 提供者等への適用範囲（変更） 高度な AI システムを取り扱う AI 提供者は、第2部D.についてI)〜XI)は適切な範囲で遵守すべきであり、XII)は遵守すべきである。 全ての AI 関係者は、「第2部 D. 広島 AI プロセス「全ての AI 関係者向けの広島プロセス国際指針」」に即した行動をすべきである。また、報告枠組みの質問の大部分はAI 提供者も回答できるものとなっている。 第1.1版では高度な AI 提供者向けにI)〜XIの適用範囲が個別に示されていましたが、第1.2版では全 AI 関係者（AI 提供者を含む）に共通する行動の指針として書き換えられています。",
+      "expected_answer": "第1.1版の「D. 高度なAIシステムに関係する事業者に共通の指針」は、高度なAIシステムに関係する事業者がI)〜XII)を遵守すべきとし、AI提供者・AI利用者は適切な範囲で遵守するとしていた。第1.2版では「D. 広島AIプロセス「全てのAI関係者向けの広島プロセス国際指針」」に再構成され、全てのAIシステムに関係する事業者が国際指針に即した行動をすべきとされた。11の原則は全てのAI関係者に適切な範囲で適用され、さらに第12の指針（高度なAIシステムの信頼でき責任ある利用の促進）に従うべきとしている。開発者向けの国際行動規範の内容は第3部に移された。",
+      "tokens": {
+        "input": 5590,
+        "output": 1460
+      },
+      "cost_usd": 0.001289,
+      "seconds": 7.3
+    },
+    {
+      "id": "D3",
+      "type": "diff",
+      "question": "第1.2版では「AIエージェント」はどのように扱われるようになりましたか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "diff",
+        "version": null,
+        "search_query": "AIエージェント 定義",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            10,
+            11
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.1",
+          5
+        ],
+        [
+          "1.1",
+          9
+        ],
+        [
+          "1.2",
+          5
+        ],
+        [
+          "1.2",
+          9
+        ],
+        [
+          "1.2",
+          11
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "第1.2版では、「AIエージェント」が用語として新たに定義され、本ガイドラインでは「特定の目標を達成するために、環境を感知し自律的に行動するAIシステム」とされています。あわせて、AIエージェントより包括的な概念として「エージェンティックAI」が脚注で説明され、AI利用者・開発者の役割や社会実装の動向にも言及が加わっています。第1.1版の参照テキストには「AIエージェント」の記載は見当たりません。\nAIエージェントの定義（新設） 検索した範囲では記載が見つからない 本ガイドラインにおけるAIエージェントは、特定の目標を達成するために、環境を感知し自律的に行動するAIシステムとする。参考としてISO/IEC 22989:2022では「自動化された主体であり、環境を感知して応答し、自らの目標を達成するために行動を取るもの」と定義されている。 第1.2版で用語「AIエージェント」が新たに定義され、環境の感知と自律的な行動が要素とされた。自律性はある程度の自律性を持つものも含む(脚注19)。\nエージェンティックAIとの関係（新設） 検索した範囲では記載が見つからない AIエージェントよりも包括的かつ進化的な概念としてエージェンティックAIがあり、複数のAIエージェントにより自律的に意思決定を下しアクションを起こす目標主導型のAIシステムとされる(脚注18)。 AIエージェントを包含する上位概念として、エージェンティックAIが第1.2版で説明されている。\n推論におけるAIエージェントの位置づけ（新設） 検索した範囲では記載が見つからない 推論では、ユーザーのプロンプトやセンサからの取得データに加え、RAG等を介して外部知識を補完した情報等が用いられ、これらを統合した推論用データをAIモデルが処理して回答を導く。 AIエージェントの説明と並んで推論プロセスの説明が加わり、外部知識の補完を含む情報統合が示されている。\nAI の社会実装の動向（変更） 生成AIが注目を集めている。AIの種類は多岐にわたり、今後の在り方は専門家でも予測困難とされている。 生成AIも普及しつつあり、加えて近年ではAIエージェントやフィジカルAIの社会実装の試みも進んでいるとされる。 第1.2版ではAIエージェントが社会実装の動向の一つとして位置づけられている。\nAI開発者の役割（事後学習）（変更） AI開発者の役割は、AIモデル・アルゴリズムの開発、データ収集、前処理、学習及び検証を通してAIシステムを構築することとされている。 上記に加え、開発及び実運用後も、ドメイン知識の拡充や環境変化への対応、アライメントを目的とした事後学習(Post Training)を通じてAIモデルの性能を維持・改善することも役割として担うとされている。 AIエージェントなど実運用されるAIを前提に、開発者の役割が運用後の性能維持・改善まで広げられている。",
+      "expected_answer": "第1.1版には定義がなく、第1.2版で用語として新設された。AIエージェントは「特定の目標を達成するために、環境を感知し自律的に行動するAIシステム」と定義され、「自律」は高度な自律状態だけでなく、ある程度の自律性を持つものも含む。",
+      "tokens": {
+        "input": 6770,
+        "output": 1487
+      },
+      "cost_usd": 0.0014204999999999999,
+      "seconds": 7.73
+    },
+    {
+      "id": "S4",
+      "type": "single",
+      "question": "このガイドラインは誰を対象にしていますか。個人が趣味で生成AIを使う場合も対象ですか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "ガイドラインの対象者 適用対象 AI利用者 個人 趣味 生成AI",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            5
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          4
+        ],
+        [
+          "1.2",
+          5
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "本ガイドラインは、様々な事業活動において AI の開発・提供・利用を担う全ての者（政府・自治体等の公的機関を含む）を対象としています。AI の事業活動を担う主体として「AI 開発者」「AI 提供者」「AI 利用者」の3つに大別されます。事業活動以外で AI を利用する者は対象に含まれないため、個人が趣味で生成AIを使う場合は、本ガイドラインの対象ではありません。また、AI システム・サービスの便益を享受する業務外利用者も対象には含まれません。",
+      "expected_answer": "事業活動でAIを担う主体を対象とし、AI開発者・AI提供者・AI利用者の3つに大別される。事業活動以外でAIを利用する者など（業務外利用者）は対象に含まない。",
+      "tokens": {
+        "input": 4495,
+        "output": 413
+      },
+      "cost_usd": 0.000656,
+      "seconds": 3.07
+    },
+    {
+      "id": "S5",
+      "type": "single",
+      "question": "日本のAIセーフティ・インスティテュート（AISI）は、いつ、どの組織に設置されましたか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "AIセーフティ・インスティテュート 設置 組織 経済産業省 情報処理推進機構",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            8
+          ],
+          "rank": 3
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          8
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "日本のAIセーフティ・インスティテュート（AISI）は、2024 年 2 月 14 日に、独立行政法人情報処理推進機構（IPA）に設置されました。",
+      "expected_answer": "2024年2月14日に、関係府省庁及び関係機関の協力の下、独立行政法人情報処理推進機構（IPA）に設置された。",
+      "tokens": {
+        "input": 4012,
+        "output": 269
+      },
+      "cost_usd": 0.0005357000000000001,
+      "seconds": 2.31
+    },
+    {
+      "id": "S6",
+      "type": "single",
+      "question": "「AI」という言葉が初めて使われたのはいつ、どこだとされていますか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "AI 用語 初めて使われた 時期 場所 定義 ダートマス会議",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            9
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          9
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "「AI」という言葉は、1956年にダートマス会議で初めて使用された言葉であるとされています。",
+      "expected_answer": "1956年のダートマス会議で初めて使用された言葉であるとされている。",
+      "tokens": {
+        "input": 4022,
+        "output": 236
+      },
+      "cost_usd": 0.0005202,
+      "seconds": 2.34
+    },
+    {
+      "id": "S7",
+      "type": "single",
+      "question": "ガイドラインが「基本理念」として掲げる3つの価値は何ですか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "基本理念 人間中心 価値 AI 社会 目指すべき",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            12
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": false,
+      "answerable_ok": false,
+      "missing_keywords": [
+        "多様",
+        "持続可能"
+      ],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          12
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": false,
+      "answer": "「人間中心の AI 社会原則」において尊重すべき「基本理念」として、「人間の尊厳が尊重される社会(Dignity)」を含む3つの価値が挙げられています。参照テキストでは冒頭の1つ目（人間の尊厳が尊重される社会(Dignity)）の内容は示されていますが、残りの2つの価値の名称は参照テキストからは確認できません。",
+      "expected_answer": "人間の尊厳が尊重される社会（Dignity）、多様な背景を持つ人々が多様な幸せを追求できる社会（Diversity and Inclusion）、持続可能な社会（Sustainability）の3つ。",
+      "tokens": {
+        "input": 4368,
+        "output": 333
+      },
+      "cost_usd": 0.0006033,
+      "seconds": 4.24
+    },
+    {
+      "id": "S8",
+      "type": "single",
+      "question": "アカウンタビリティのための「文書化」は、紙や決まった様式の文書で残す必要がありますか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "アカウンタビリティ 文書化 記録 様式 ステークホルダーへの説明",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            22
+          ],
+          "rank": 2
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": false,
+      "answerable_ok": false,
+      "missing_keywords": [
+        "必ずしも"
+      ],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          22
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": false,
+      "answer": "参照テキストからは分かりません。参照テキストには「上記に関する情報を文書化して一定期間保管し、必要なときに、必要なところで、入手可能かつ利用に適した形で参照可能な状態とする」とあるものの、紙か様式の指定があるかどうかは書かれていません。",
+      "expected_answer": "必ずしも紙媒体や特定の文書の形式による必要はなく、後から容易に確認可能となるよう適切なツールで記録が残されていれば差し支えない。",
+      "tokens": {
+        "input": 4321,
+        "output": 304
+      },
+      "cost_usd": 0.0005841,
+      "seconds": 2.77
+    },
+    {
+      "id": "S9",
+      "type": "single",
+      "question": "このガイドラインに従わなかった場合、法的な義務違反になりますか。ガイドラインの性格を教えてください。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "ガイドラインの法的拘束力 法的義務 性格 位置づけ ソフトロー",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            2,
+            3
+          ],
+          "rank": 2
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": false,
+      "answerable_ok": false,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          3
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": false,
+      "answer": "参照テキストからは、ガイドラインに従わなかった場合に法的な義務違反となるかどうかは分かりません。ガイドラインの性格については、事業者がAIの社会実装及びガバナンスを共に実践するための非拘束的なソフトローであると示されています。また、従来のガイドラインに代わり、AIを活用する事業者が安全安心なAI活用のための望ましい行動につながる指針（Guiding Principles）を確認できるものとされています。",
+      "expected_answer": "非拘束的なソフトローとして、関係者の自主的な取組を促すゴールベースの考え方で作成されている。細かな行為義務を定めるルールベースの規制はイノベーションを阻害する可能性があるとしている。",
+      "tokens": {
+        "input": 3907,
+        "output": 364
+      },
+      "cost_usd": 0.0005727000000000001,
+      "seconds": 2.86
+    },
+    {
+      "id": "S10",
+      "type": "single",
+      "question": "ガイドラインでいう「アカウンタビリティ」は、「説明可能性」と同じ意味ですか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "アカウンタビリティ 定義 説明可能性 説明責任",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            21
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          21
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "同じ意味ではありません。ガイドラインでは、アカウンタビリティを説明可能性と定義することもあるものの、本ガイドラインでは情報開示は透明性で対応するとしています。アカウンタビリティは、AIに関する事実上・法律上の責任を負うこと及びその責任を負うための前提条件の整備に関する概念とされています。",
+      "expected_answer": "同じではない。アカウンタビリティを説明可能性と定義することもあるが、本ガイドラインでは情報開示は透明性で扱い、アカウンタビリティはAIに関する事実上・法律上の責任を負うこと及びその前提条件の整備に関する概念としている。",
+      "tokens": {
+        "input": 4144,
+        "output": 317
+      },
+      "cost_usd": 0.0005729000000000001,
+      "seconds": 3.16
+    },
+    {
+      "id": "S11",
+      "type": "single",
+      "question": "英国の「AI Safety Institute」は、その後どのような名称に変わりましたか。時期も教えてください。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "英国 AI Safety Institute 名称変更 AI Security Institute",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            8
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          8
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "英国の「AI Safety Institute」は、2025 年 2 月に「AI Security Institute」に改称されました。",
+      "expected_answer": "2025年2月に、AI Safety InstituteからAI Security Instituteに改称された。",
+      "tokens": {
+        "input": 4091,
+        "output": 234
+      },
+      "cost_usd": 0.0005261,
+      "seconds": 2.83
+    },
+    {
+      "id": "V1",
+      "type": "single",
+      "question": "第1.1版では、AISIの「AIセーフティに関する評価観点ガイド」はいつ公表されたものとして紹介されていますか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "single",
+        "version": "1.1",
+        "search_query": "AISI AIセーフティに関する評価観点ガイド 公表",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.1",
+          "pages": [
+            8
+          ],
+          "rank": 2
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": false,
+      "answerable_ok": false,
+      "missing_keywords": [
+        "2024年9月"
+      ],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.1",
+          8
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": false,
+      "answer": "参照テキストからは分かりません。第1.1版の p8 には、AISI の「AIセーフティに関する評価観点ガイド」の公表についての言及はあるものの、公表日は記載されていません。",
+      "expected_answer": "第1.1版では2024年9月公表として紹介されている（第1.2版では第1.10版・2025年3月）。",
+      "tokens": {
+        "input": 4468,
+        "output": 263
+      },
+      "cost_usd": 0.0005783,
+      "seconds": 2.72
+    },
+    {
+      "id": "N1",
+      "type": "single",
+      "question": "ガイドラインは、企業が使う生成AIサービスとしてChatGPTとClaudeのどちらを推奨していますか。",
+      "expected_answerable": false,
+      "route": {
+        "kind": "single",
+        "version": "1.2",
+        "search_query": "企業 利用 生成AIサービス 選定 特定の製品 推奨",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [],
+      "retrieval_ok": null,
+      "answerable": false,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": null,
+      "cited_sources": [],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "参照テキストからは分かりません。参照テキストは、AIによる意思決定・感情操作への留意や、AIの定義、政府職員向けの生成AI調達・利活用ガイドラインの位置づけなどを述べていますが、企業が使う生成AIサービスとしてChatGPTとClaudeのどちらを推奨するかは書かれていません。",
+      "expected_answer": "特定の製品を推奨する記載はない。参照テキストからは分からないと答えるべき。",
+      "tokens": {
+        "input": 4381,
+        "output": 304
+      },
+      "cost_usd": 0.0005901000000000001,
+      "seconds": 2.89
+    },
+    {
+      "id": "N2",
+      "type": "single",
+      "question": "第1.1版では、「AIエージェント」はどのように定義されていますか。",
+      "expected_answerable": false,
+      "route": {
+        "kind": "single",
+        "version": "1.1",
+        "search_query": "AIエージェント 定義",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [],
+      "retrieval_ok": null,
+      "answerable": false,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": null,
+      "cited_sources": [],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "参照テキストからは分かりません。提示された参照テキストには「AIエージェント」の定義は含まれていません。",
+      "expected_answer": "第1.1版には AIエージェントの定義はない（第1.2版で新設）。参照テキストからは分からないと答えるべき。",
+      "tokens": {
+        "input": 4276,
+        "output": 204
+      },
+      "cost_usd": 0.0005296000000000001,
+      "seconds": 2.87
+    },
+    {
+      "id": "D4",
+      "type": "diff",
+      "question": "個人情報保護法の「3年ごと見直し」について、第1.1版と第1.2版で記載はどう変わりましたか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "diff",
+        "version": null,
+        "search_query": "個人情報保護法 3年ごと見直し 個人情報保護委員会 改正 法令遵守",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.1",
+          "pages": [
+            17
+          ],
+          "rank": 1
+        },
+        {
+          "version": "1.2",
+          "pages": [
+            18
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.1",
+          17
+        ],
+        [
+          "1.2",
+          18
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "第1.1版では、個人情報保護法の「3年ごと見直し」について、AI開発等を含む統計作成等のみを目的とした取り扱いの本人同意の在り方等が検討されていると脚注で触れるにとどまっていました。第1.2版では、同じ検討内容に加え、2026年1月に「個人情報保護法 いわゆる3年ごと見直しの制度改正方針」が公表されたことと、その公表資料のURLが追記されています。\n個人情報保護法の「3年ごと見直し」の状況（変更） 個人情報保護委員会において、いわゆる3年ごと見直しに関する検討が進められており、AI開発等を含む統計作成等のみを目的とした取り扱いを実施する場合の本人同意の在り方等が検討されている（2025年2月公表資料へのリンクあり）。 個人情報保護委員会において、いわゆる3年ごと見直しに関する検討が進められており、AI開発等を含む統計作成等のみを目的とした取り扱いを実施する場合の本人同意の在り方等が検討されている。さらに、2026年1月には「個人情報保護法 いわゆる3年ごと見直しの制度改正方針」が公表された（2026年1月公表資料へのリンクあり）。 検討中という記述は同じですが、第1.2版では2026年1月に制度改正方針が公表されたことが追記され、参照資料も2026年1月公表のものに更新されています。",
+      "expected_answer": "第1.1版は3年ごと見直しの検討が進められていること（AI開発等を含む統計作成等の本人同意の在り方を検討）を記載していた。第1.2版はこれに加え、2026年1月に「個人情報保護法 いわゆる3年ごと見直しの制度改正方針」が公表されたことを追記した。",
+      "tokens": {
+        "input": 7099,
+        "output": 745
+      },
+      "cost_usd": 0.0010824,
+      "seconds": 5.21
+    },
+    {
+      "id": "D5",
+      "type": "diff",
+      "question": "AI開発者とAI提供者の役割分担について、第1.2版ではどのような説明が加わりましたか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "diff",
+        "version": null,
+        "search_query": "AI開発者 AI提供者 役割分担 責任 関係",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            5
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.1",
+          5
+        ],
+        [
+          "1.2",
+          5
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "第1.2版では、AI開発者の役割に「開発及び実運用後も、ドメイン知識の拡充や環境変化への対応、アライメントを目的とした事後学習（Post Training）を通じてAIモデルの性能を維持・改善すること」が加わりました。また、脚注で一般的な役割分担（AI開発者はAPI仕様策定・入出力設計・インフラ整備、AI提供者はUI/UX設計・既存業務システムとの統合等）が示され、AIシステム構築の全てをAI開発者が担うと整理されているわけではないと明記されています。\nAI開発者の役割（実運用後の性能維持・改善）（変更） AI開発者は、AIモデル・アルゴリズムの開発、データ収集（購入を含む）、前処理、AIモデル学習及び検証を通してAIモデル、AIモデルのシステム基盤、入出力機能等を含むAIシステムを構築する役割を担う。 上記に加え、AIモデル・システムの開発及び実運用後も、ドメイン知識の拡充や環境の変化への対応、人間の意図や価値観に沿った行動を実現するためのアライメントを目的とした事後学習（Post Training）を通じて、AIモデルの性能を維持・改善することも役割として担う。 AI開発者の役割が開発段階にとどまらず、実運用後のAIモデルの性能維持・改善まで広がったことが示されています。\nAI開発者とAI提供者の役割分担の例示（新設） 検索した範囲では記載が見つからない 脚注8で、一般的にAI開発者はAPI仕様策定や入出力設計、AIモデルを動作させるためのインフラ整備を担い、AI提供者はUI/UX設計や既存業務システムとの統合等を担うと例示されています。ただし、AIシステム構築の全てをAI開発者が担うと整理されているわけではなく、実際には多様なケースがあるとされています。 両者の役割分担の一般的な目安と、役割は多様でこれに限定されないという留意点が追加されました。",
+      "expected_answer": "第1.2版で脚注が追加され、一般的にはAI開発者はAPI仕様策定や入出力設計、AIモデルを動作させるためのインフラ整備を担い、AI提供者はUI/UX設計や既存業務システムとの統合等を担うとし、AIシステムの構築の全てをAI開発者が担うと整理されているわけではないとした。",
+      "tokens": {
+        "input": 7823,
+        "output": 993
+      },
+      "cost_usd": 0.0012788,
+      "seconds": 5.77
+    },
+    {
+      "id": "D6",
+      "type": "diff",
+      "question": "政府や自治体がAIを使う場合について、第1.2版で新たに参照されるようになった文書は何ですか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "diff",
+        "version": null,
+        "search_query": "政府や自治体がAIを利用する場合 参照文書 ガイドライン 公共部門",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            3
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          3
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "第1.2版では、政府に関して「行政の進化と革新のための生成AIの調達・利活用に係るガイドライン」(令和7年5月27日 デジタル社会推進会議幹事会決定)が、自治体に関して「自治体における AI 活用・導入ガイドブック<導入手順編>」(2025 年 12 月改訂)が新たに参照されています。第1.1版の参照テキストにはこれらの文書は見当たらず、検索した範囲では記載が見つからないため、追加されたと断定できるのは上記の2文書です。\n政府がAIを利活用する場合の参照文書（新設） 検索した範囲では記載が見つからない 政府は生成AIの利活用促進とリスク管理を進めるため、「行政の進化と革新のための生成AIの調達・利活用に係るガイドライン」(令和7年5月27日 デジタル社会推進会議幹事会決定)を策定したと記載されている。このガイドラインは、政府職員等向けに、AIガバナンスや生成AIの調達・利活用で留意すべきリスク等を整理したものとされる。 政府の生成AI利活用については、AI事業者ガイドラインに加え、政府職員向けの上記ガイドラインが参照文書として示されている。\n自治体がAIを利用する場合の参照文書（新設） 検索した範囲では記載が見つからない 自治体向けのAIの利用方法や留意事項については、本ガイドラインを参考としつつ、「自治体における AI 活用・導入ガイドブック<導入手順編>」(2025 年 12 月改訂)が公表されていると記載されている。同ガイドブックは、生成AIの利活用事例、ガバナンス確保のための体制構築、要機密情報の取扱い、人材育成の考え方等を提示している。 自治体のAI利用については、本ガイドラインを参考にしつつ、自治体に特化した上記ガイドブックを参照する構成になっている。",
+      "expected_answer": "「行政の進化と革新のための生成AIの調達・利活用に係るガイドライン」（令和7年5月27日 デジタル社会推進会議幹事会決定）と、「自治体におけるAI活用・導入ガイドブック<導入手順編>」（2025年12月改訂）が脚注で追加された。",
+      "tokens": {
+        "input": 6424,
+        "output": 948
+      },
+      "cost_usd": 0.0011164,
+      "seconds": 5.32
+    },
+    {
+      "id": "D7",
+      "type": "diff",
+      "question": "AIのセキュリティ対策について、第1.2版で新たに紹介された総務省のガイドラインは何ですか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "diff",
+        "version": null,
+        "search_query": "AIセキュリティ対策 総務省 ガイドライン 参照 紹介",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            19
+          ],
+          "rank": 4
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          19
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "第1.2版では、総務省のサイバーセキュリティタスクフォース下の「AI セキュリティ分科会」の取りまとめ（2025 年 12 月）を踏まえ、「AI のセキュリティ確保のための技術的対策に係るガイドライン」が 2026 年 3 月に策定されたと記載されています。これは、AI 開発者及び AI 提供者向けに、LLM及びLLMを構成要素に含むAIシステムに対する脅威への技術的対策例を整理したものです。第1.1版の参照テキストには該当する記載は見つかりませんでした。\nAIのセキュリティ対策に関する総務省のガイドライン（新設） 検索した範囲では記載が見つからない 総務省のサイバーセキュリティタスクフォース下の「AI セキュリティ分科会」の取りまとめ（2025 年 12 月）を踏まえ、AI 開発者及び AI 提供者における、LLM 及び LLM を構成要素に含む AI システムに対する脅威への技術的対策例を整理した「AI のセキュリティ確保のための技術的対策に係るガイドライン」を 2026 年 3 月に策定。 第1.2版で新たに紹介された総務省のAIセキュリティ関連ガイドラインは「AI のセキュリティ確保のための技術的対策に係るガイドライン」（2026 年 3 月策定）です。",
+      "expected_answer": "総務省の「AIセキュリティ分科会」の取りまとめ（2025年12月）を踏まえ、LLM及びLLMを構成要素に含むAIシステムに対する脅威への技術的対策例を整理した「AIのセキュリティ確保のための技術的対策に係るガイドライン」（2026年3月策定）が追加された。",
+      "tokens": {
+        "input": 5853,
+        "output": 711
+      },
+      "cost_usd": 0.0009408000000000001,
+      "seconds": 4.52
+    },
+    {
+      "id": "D8",
+      "type": "diff",
+      "question": "広島AIプロセスの「報告枠組み」について、AI提供者に関する記載は第1.2版でどう変わりましたか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "diff",
+        "version": null,
+        "search_query": "広島AIプロセス 報告枠組み AI提供者 広島 AI プロセス「全ての AI 関係者向けの広島プロセス国際指針」 報告",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            39
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          36
+        ],
+        [
+          "1.2",
+          39
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "第1.1版の参照テキストには「報告枠組み」とAI提供者の関係に関する記載は見当たらず、第1.2版では「報告枠組み」に記載された質問の大部分はAI提供者も回答できるものとなっており、回答による参加のメリットは第3部を参照とされている。第1.1版の記載は検索した範囲では見つからないため、追加されたかどうかは断定できない。\n広島AIプロセスの「報告枠組み」とAI提供者の関係（新設） 検索した範囲では記載が見つからない 「報告枠組み」に記載された質問の大部分はAI提供者も回答できるものとなっている（回答による参加のメリットを含め、詳細は第3部を参照）と記載されている。 第1.2版では、報告枠組みの質問の多くをAI提供者も回答できることが示されている。第1.1版の参照テキストにはこの記載が見当たらないが、検索で選ばれた一部にすぎないため、本当に新設されたかは断定できない。\n報告枠組みの参加組織の状況（新設） 検索した範囲では記載が見つからない 2026年3月現在、日本企業9社を含む25組織が回答を提出し、OECDのウェブサイト上で公表されている、と記載されている。 報告枠組みへの回答状況が脚注で示されているが、AI提供者に直接関係する記述かは参照テキストからは限定できない。",
+      "expected_answer": "第1.2版の第4部（AI提供者）に、報告枠組みに記載された質問の大部分はAI提供者も回答できるものとなっているとの記載が追加された。",
+      "tokens": {
+        "input": 5873,
+        "output": 788
+      },
+      "cost_usd": 0.0009813,
+      "seconds": 4.41
+    },
+    {
+      "id": "D9",
+      "type": "diff",
+      "question": "AISIの「AIセーフティに関する評価観点ガイド」の紹介は、第1.1版と第1.2版でどう変わりましたか。",
+      "expected_answerable": true,
+      "error": "エラー：ValidationError",
+      "error_detail": "1 validation error for DiffAnswer\nchanges\n  Field required [type=missing, input_value={'summary': '第1.1版の...}]', 'answerable': True}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+      "route": {
+        "kind": "-",
+        "version": null,
+        "search_query": "-",
+        "ok": false
+      },
+      "route_ok": false,
+      "retrieval": [],
+      "retrieval_ok": false,
+      "answerable": null,
+      "answerable_ok": false,
+      "missing_keywords": [],
+      "source_ok": false,
+      "cited_sources": [],
+      "unknown_sources": 0,
+      "correct": false,
+      "answer": "",
+      "expected_answer": "第1.1版は「AIセーフティに関する評価観点ガイド」（2024年9月）を紹介していた。第1.2版は第1.10版（2025年3月）に更新し、AIセーフティ評価ツールの公開も追記した。",
+      "tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "cost_usd": 0.0,
+      "seconds": 4.92
+    },
+    {
+      "id": "D10",
+      "type": "diff",
+      "question": "GPAI東京専門家支援センターの活動の説明は、第1.1版と第1.2版でどう変わりましたか。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "diff",
+        "version": null,
+        "search_query": "GPAI東京専門家支援センター 活動 説明",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.1",
+          "pages": [
+            8
+          ],
+          "rank": 1
+        },
+        {
+          "version": "1.2",
+          "pages": [
+            8
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.1",
+          8
+        ],
+        [
+          "1.2",
+          8
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "GPAI東京専門家支援センターについて、第1.1版は生成AIの安全性保証に関するSAFEプロジェクトの展開やOECDとの協議による新規プロジェクトの実施を記載していたのに対し、第1.2版は同センターがOECD事務局および他のGPAIセンターと連携し、AIの最新動向調査（Agentic AI等）、若手人材育成、専門家ワークショップ等の各種プロジェクトを推進していると記載している。\nGPAI東京専門家支援センターの活動内容（変更） 2024年7月に国立研究開発法人情報通信研究機構(NICT)に設置。これまでにSAFEプロジェクト（生成AIの安全性を保証するための実践的なアプローチの調査）を展開してきたほか、OECDと協議しながら新たな生成AI関連プロジェクトを実施していくこととしている。 2024年7月に国立研究開発法人情報通信研究機構(NICT)に設置。OECD事務局および他のGPAIセンター（Inria（仏）、CEIMIA（加））と連携し、AIの最新動向に関する調査・分析（Agentic AI等）、若手人材育成（Student Community等）、専門家によるワークショップ開催（Innovation Workshop等）を含む各種プロジェクトを推進している。 第1.1版はSAFEプロジェクトの展開と今後の計画を中心に記載していたが、第1.2版では連携先と、調査・人材育成・ワークショップなど現在推進中の具体的な活動内容が記載された。\nSAFEプロジェクトの記載（削除） SAFEプロジェクト（生成AIの安全性を保証するための実践的なアプローチの調査）を展開してきた、と記載。 検索した範囲では記載が見つからない 第1.2版の参照テキストにはSAFEプロジェクトへの言及がないが、これは検索で選んだ一部の抜粋によるもので、削除されたとは断定できない。\nAgentic AIに関する参照先（新設） 検索した範囲では記載が見つからない AIの最新動向に関する調査・分析の例としてAgentic AIを挙げ、関連ページ（https://www2.nict.go.jp/gpai-tokyo-esc/agenticAI/）を示している。 第1.2版では、Agentic AIに関する調査・分析が同センターの活動例として明記された。",
+      "expected_answer": "第1.1版はSAFEプロジェクト（生成AIの安全性を保証するための実践的なアプローチの調査）の展開などを記載していた。第1.2版はOECD事務局や他のGPAIセンター（Inria、CEIMIA）と連携し、AIの最新動向の調査・分析（Agentic AI等）、若手人材育成、ワークショップ開催などを推進していると記載した。",
+      "tokens": {
+        "input": 6848,
+        "output": 1150
+      },
+      "cost_usd": 0.0012598000000000002,
+      "seconds": 6.34
+    },
+    {
+      "id": "X1",
+      "type": "diff",
+      "question": "第1.2版で新たに言及されたAI関連の法律は何ですか。法律番号と施行時期も教えてください。",
+      "expected_answerable": true,
+      "route": {
+        "kind": "diff",
+        "version": null,
+        "search_query": "AI関連の法律 法律番号 施行 言及",
+        "ok": true
+      },
+      "route_ok": true,
+      "retrieval": [
+        {
+          "version": "1.2",
+          "pages": [
+            2
+          ],
+          "rank": 1
+        }
+      ],
+      "retrieval_ok": true,
+      "answerable": true,
+      "answerable_ok": true,
+      "missing_keywords": [],
+      "source_ok": true,
+      "cited_sources": [
+        [
+          "1.2",
+          2
+        ]
+      ],
+      "unknown_sources": 0,
+      "correct": true,
+      "answer": "第1.2版では、「人工知能関連技術の研究開発及び活用の推進に関する法律」（令和7年法律第53号）が新たに言及されています。同法は2025年6月に公布、2025年9月に全面施行されたと記載されています。\nAI関連の法律（人工知能関連技術の研究開発及び活用の推進に関する法律）（新設） 検索した範囲では記載が見つからない 「人工知能関連技術の研究開発及び活用の推進に関する法律」（令和7年法律第53号）が2025年6月に公布、9月に全面施行された。 第1.2版で新たに言及されたAI関連の法律は、令和7年法律第53号です。公布は2025年6月、全面施行は2025年9月です。",
+      "expected_answer": "「人工知能関連技術の研究開発及び活用の推進に関する法律」（令和7年法律第53号）。2025年6月に公布、9月に全面施行。同年12月には同法第13条に基づく適正性確保に関する指針も策定された。第1.1版には記載がない。",
+      "tokens": {
+        "input": 5604,
+        "output": 474
+      },
+      "cost_usd": 0.0007974,
+      "seconds": 3.36
+    }
+  ]
+}
