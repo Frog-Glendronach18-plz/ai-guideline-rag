@@ -51,39 +51,18 @@ LLM は呼ばない（費用は質問文の埋め込みだけ）。
   チャンクの長さではなく質問の形の問題で、Phase 2 のクエリ書き換えで改善を確かめる。
 """
 
-import json
 import sys
 
 from langchain_core.vectorstores import InMemoryVectorStore
 
-from ai_guideline_rag.config import ROOT_DIR
 from ai_guideline_rag.embeddings import get_embeddings
+from ai_guideline_rag.evaluation import first_hit_rank, hit_summary, load_questions, targets
 from ai_guideline_rag.index import build_index, load_index
 from ai_guideline_rag.loader import load_guidelines
 from ai_guideline_rag.retriever import format_context, search, source_label
 from ai_guideline_rag.splitter import DEFAULT_CHUNK_OVERLAP, split_documents
 
-MAX_K = 10
-K_LEVELS = (1, 3, 5, 10)
-
-questions = json.loads((ROOT_DIR / "data/eval/questions.json").read_text("utf-8"))["questions"]
-
-
-def targets(q: dict) -> list[tuple[str, set[int]]]:
-    """(検索する版, 正解ページの集合) のリスト。"""
-    by_version: dict[str, set[int]] = {}
-    for s in q["sources"]:
-        by_version.setdefault(s["version"], set()).add(s["page"])
-    return list(by_version.items())
-
-
-def first_hit_rank(store: InMemoryVectorStore, question: str, version: str, pages: set[int]):
-    """正解ページが最初に現れた順位（1始まり）。MAX_K 件以内になければ None。"""
-    results = search(store, question, version, k=MAX_K)
-    for rank, (doc, _) in enumerate(results, start=1):
-        if doc.metadata["page"] in pages:
-            return rank, results
-    return None, results
+questions = load_questions()
 
 
 def evaluate(store: InMemoryVectorStore, verbose: bool) -> list[int | None]:
@@ -106,19 +85,13 @@ def evaluate(store: InMemoryVectorStore, verbose: bool) -> list[int | None]:
     return ranks
 
 
-def summary(ranks: list[int | None]) -> str:
-    return " / ".join(
-        f"top{k} {sum(1 for r in ranks if r and r <= k)}/{len(ranks)}" for k in K_LEVELS
-    )
-
-
 embeddings = get_embeddings()
 chunk_sizes = [int(a) for a in sys.argv[1:]]
 
 if not chunk_sizes:
     store = load_index(embeddings)
     ranks = evaluate(store, verbose=True)
-    print(f"\n===== ヒット率（保存済みの索引） =====\n{summary(ranks)}")
+    print(f"\n===== ヒット率（保存済みの索引） =====\n{hit_summary(ranks)}")
 
     q = questions[2]  # S3
     print(f"\n===== CONTEXT の例（{q['id']}、上位2件） =====")
@@ -131,4 +104,4 @@ else:
         chunks = split_documents(pages, size, overlap)
         store = build_index(chunks, embeddings)
         label = f"長さ {size:>4} / 重なり {overlap:>3}（{len(chunks)}件）"
-        print(f"{label}: {summary(evaluate(store, False))}")
+        print(f"{label}: {hit_summary(evaluate(store, False))}")

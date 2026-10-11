@@ -2,6 +2,7 @@
 
 - search()：質問に近いチャンクを上位k件取る。version を指定すると、その版だけに絞り込む。
 - search_each_version()：版ごとに上位k件ずつ取る（差分の質問用。片方の版に偏らないようにする）。
+- table_of_contents()：各版の目次（p1）の文字列。章の番号を指す質問の書き換えに使う。
 - format_context()：チャンクを「[第1.2版 p20]」の見出し付きの文字列にまとめ、
   LLM に渡す CONTEXT にする。LLM はこの見出しを見て出典の版・ページを答える。
 
@@ -24,6 +25,8 @@ python -m uv run python scripts/try_search.py
   store.as_retriever(search_kwargs={"k": 4}) で、`|` でつなげる Runnable 形式の検索部品にもできる。
   ここでは版の絞り込みとスコアを扱いやすくするため、関数として書いている。
 """
+
+import re
 
 from langchain_core.documents import Document
 from langchain_core.vectorstores import InMemoryVectorStore
@@ -67,3 +70,24 @@ def source_label(doc: Document) -> str:
 def format_context(docs: list[Document]) -> str:
     """チャンクを見出し付きでつなげ、LLM に渡す参照テキストにする。"""
     return "\n\n".join(f"[{source_label(d)}]\n{d.page_content}" for d in docs)
+
+
+def table_of_contents(store: InMemoryVectorStore) -> str:
+    """索引から各版の目次（p1）を取り出し、版ごとの見出し付きの文字列にする。
+
+    章の番号（「第2部 D.」など）を指す質問を、内容の言葉に書き換えるときに LLM に渡す。
+    目次の点線（……）は省いて短くする。
+    """
+    parts = []
+    for version in GUIDELINE_PDFS:
+        chunks = sorted(
+            (
+                r
+                for r in store.store.values()
+                if r["metadata"]["version"] == version and r["metadata"]["page"] == 1
+            ),
+            key=lambda r: r["metadata"]["chunk"],
+        )
+        text = "\n".join(r["text"] for r in chunks)
+        parts.append(f"[第{version}版 目次]\n{re.sub(r'\s*\.{3,}\s*', ' … p', text)}")
+    return "\n\n".join(parts)

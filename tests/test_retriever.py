@@ -9,7 +9,13 @@ from langchain_core.documents import Document
 from langchain_core.embeddings import DeterministicFakeEmbedding
 
 from ai_guideline_rag.index import build_index
-from ai_guideline_rag.retriever import format_context, search, search_each_version, source_label
+from ai_guideline_rag.retriever import (
+    format_context,
+    search,
+    search_each_version,
+    source_label,
+    table_of_contents,
+)
 
 
 def _store():
@@ -51,3 +57,24 @@ def test_format_context_has_source_headings():
     ]
     assert format_context(docs) == "[第1.2版 p20]\n同じ文\n\n[第1.2版 表紙]\n表題"
     assert source_label(docs[1]) == "第1.2版 表紙"
+
+
+def test_table_of_contents_per_version():
+    # 通る例   : "[第1.1版 目次]\nD. 高度な… … p25\n\n[第1.2版 目次]\nD. 広島… … p26"
+    #            （各版の p1 だけを、版ごとの見出し付きで、点線を「 … p」に縮めて並べる）
+    # はじく例 : p1 以外のページが混ざる／版の見出しがない／点線が残る
+    chunks = [
+        Document(
+            page_content="D. 高度な指針 ........ 25",
+            metadata={"version": "1.1", "page": 1, "chunk": 0},
+        ),
+        Document(
+            page_content="D. 広島の指針 ........ 26",
+            metadata={"version": "1.2", "page": 1, "chunk": 0},
+        ),
+        Document(page_content="本文", metadata={"version": "1.2", "page": 20, "chunk": 0}),
+    ]
+    store = build_index(chunks, DeterministicFakeEmbedding(size=8))
+    assert table_of_contents(store) == (
+        "[第1.1版 目次]\nD. 高度な指針 … p25\n\n[第1.2版 目次]\nD. 広島の指針 … p26"
+    )
