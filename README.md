@@ -6,11 +6,11 @@
 
 **[https://ai-guideline-rag.onrender.com/](https://ai-guideline-rag.onrender.com/)**
 
-- 質問すると、回答と出典（版・ページ）を返します。対象の版（第1.2版／第1.1版）を選べます
+- 質問すると、回答と出典（版・ページ）を返します。質問の内容から、単一の版への質問か版の差分を聞く質問かを自動で判定します（第1.2版／第1.1版／版の差分を指定することもできます）
 - 無料プランのため、しばらくアクセスがないと最初の表示に1分ほどかかります
 - 個人が学習目的で作成した非公式のデモです。回答は必ず公式の原文で確認してください
 
-> **開発中**（版の差分への回答・評価を追加予定）。計画と進捗は [docs/roadmap.md](docs/roadmap.md)、評価用の質問は [data/eval/questions.json](data/eval/questions.json) を参照。
+> **開発中**（評価を追加予定）。計画と進捗は [docs/roadmap.md](docs/roadmap.md)、評価用の質問は [data/eval/questions.json](data/eval/questions.json) を参照。
 
 ## 構成
 
@@ -29,8 +29,10 @@
 | ③ 索引 | `embeddings.py`・`index.py`：埋め込み（Workers AI bge-m3）、索引の作成・保存・読み込み（`data/index.json`） | `build_index.py` | 済 |
 | ④⑤ 検索 | `retriever.py`：版で絞り込んだ検索（上位5件）、検索結果のコンテキスト整形 | `try_search.py` | 済 |
 | ⑥ 回答 | `answer.py`：プロンプト＋構造化出力で回答（回答・出典・回答可否）、渡していない出典の検出 | `ask.py` | 済 |
-| 差分 | `router.py`・`diff.py`：質問の種類の判定、版の差分の回答 | | |
-| 評価 | | `eval.py`：評価用の質問で正答率と出典を集計 | |
+| 判定 | `router.py`：質問の種類（単一の版／差分）の判定と、検索用の文の書き換え（目次を渡して章番号を見出しの言葉に。版の名前は除く） | `try_route.py` | 済 |
+| 差分 | `diff.py`：版ごとに検索し、変更点ごとに旧／新／要点と出典を回答 | `try_diff.py` | 済 |
+| 流れ | `pipeline.py`：判定 → 単一の版の回答／版の差分の回答。画面と `ask.py` はここを呼ぶ | `ask.py` | 済 |
+| 評価 | `evaluation.py`：評価用の質問の読み込み、正解ページの順位 | `eval.py`：評価用の質問で正答率と出典を集計 | 一部 |
 | 画面 | `app.py`（リポジトリ直下）：Gradio。同時処理2件・1日100回・質問300文字までの制限、利用統計の送信なし | `python -m uv run python app.py` | 済 |
 
 `scripts/hello_lang.py` は LangChain の練習用（チャットモデル、プロンプトテンプレート、構造化出力）。

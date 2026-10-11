@@ -65,10 +65,10 @@ def get_llm() -> BaseChatModel:
     return init_chat_model(LLM_MODEL, max_tokens=4096)
 
 
-def find_unknown_sources(answer: Answer, docs: list[Document]) -> list[Source]:
+def find_unknown_sources(sources: list[Source], docs: list[Document]) -> list[Source]:
     """LLM が挙げた出典のうち、実際に渡したチャンクの（版, ページ）にないものを返す。"""
     given = {(d.metadata["version"], d.metadata["page"]) for d in docs}
-    return [s for s in answer.sources if (s.version, s.page) not in given]
+    return [s for s in sources if (s.version, s.page) not in given]
 
 
 def answer_question(
@@ -77,10 +77,12 @@ def answer_question(
     version: str | None = LATEST_VERSION,
     k: int = DEFAULT_K,
     llm: BaseChatModel | None = None,
+    search_query: str | None = None,
 ) -> AnswerResult:
-    docs = search(store, question, version, k)
+    """search_query を渡すとその文で検索する（router が書き換えた文）。LLM には元の質問を渡す。"""
+    docs = search(store, search_query or question, version, k)
     context = format_context([doc for doc, _ in docs])
     chain = PROMPT | (llm or get_llm()).with_structured_output(Answer)
     answer = chain.invoke({"context": context, "question": question})
-    unknown = find_unknown_sources(answer, [doc for doc, _ in docs])
+    unknown = find_unknown_sources(answer.sources, [doc for doc, _ in docs])
     return AnswerResult(answer=answer, docs=docs, unknown_sources=unknown)
